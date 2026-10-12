@@ -1,18 +1,36 @@
-# Mira Messenger APK releases
+# Mira Messenger — LAMBDADEV
 
-Public Android distribution channel for Mira Messenger. Application sources are stored in the owner's private repository.
+Official Android Release distribution for **Mira Messenger 0.8.0**.
+Permanent package: **chat.mira.messenger**. Android 8.0+, arm64-v8a/x86_64.
+Application sources remain in the owner's private repository.
 
-The current MVP is **0.2.0-mvp** for Android 8.0+ (arm64-v8a and x86_64). It includes encrypted Matrix chats, voice/video calls through the configured homeserver's MatrixRTC service, and background APK update checks/downloads.
-
-- [Download the latest APK](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/MiraMessenger.apk)
-- [Update manifest](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/update-manifest.json)
+- [Download Release APK](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/MiraMessenger-release.apk)
+- [Release update manifest](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/update-manifest-release.json)
 - [Checksums](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/SHA256SUMS.txt)
-- [Release history](https://github.com/MerryGrim/MiraMessenger-releases/releases)
+- [Previous releases](https://github.com/MerryGrim/MiraMessenger-releases/releases)
 
-Install the first APK over the earlier MVP. Do not uninstall Mira or clear its data to upgrade: local history keys are stored with application data. This MVP keeps the previous development signing certificate.
+Release includes Matrix/E2EE messaging, voice/video calls, Firebase or the own-server
+push transport, message checkmarks and GitHub background update checks/downloads.
+One check means server acceptance; two require another participant's public read
+receipt (at least one participant in a group). Matrix has no standard phone-delivery
+acknowledgement. Notification deduplication applies within one installation;
+cross-device notification dismissal is not implemented.
 
-Mira checks updates daily and offers an immediate check inside the app. New versions download in the background; the APK's size, SHA-256, package, version and signing certificate are verified. Installation requires a separate tap and Android's confirmation. Android may defer background jobs.
+The new package installs separately from the archived .debug MVP. Keep old data
+until the required encrypted history is accessible in the new app. Sign in and
+restore available Matrix keys; a login password alone cannot recover lost E2EE keys.
+Later Release versions replace this same package with the existing permanent key
+and a higher versionCode. APK size, SHA-256, package/version and certificate are
+checked before installation. Android requires the user's installation confirmation.
 
-Incoming calls require Mira to be open; offline push calling is not implemented yet. A password alone cannot recover lost encryption keys, and message redaction cannot guarantee removal of other participants' copies or backups.
+Firebase requires reachable Google services; the own-server option works without
+Google and uses an Android foreground listener. Delivery can be delayed by device
+or network restrictions. Redaction cannot erase other devices' or servers' copies.
 
-Bundled Element Call has its own license. See [LICENSE-NOTICE.md](LICENSE-NOTICE.md) and [SOURCE.md](SOURCE.md) for its official license and exact upstream source. Keeping Mira's Git repository private does not grant a commercial Element license.
+Public signing-certificate SHA-256:
+`7e1a6e2805adb106e7e2f28e0dd956b9ce819f1e04a0964b27a3f46459ec5cf0`.
+This is the existing permanent certificate; no new private key was generated.
+
+Bundled Element Call has its own license. See [LICENSE-NOTICE.md](LICENSE-NOTICE.md)
+and [SOURCE.md](SOURCE.md) for its official license and exact upstream source.
+Keeping Mira's Git repository private does not grant a commercial Element license.
