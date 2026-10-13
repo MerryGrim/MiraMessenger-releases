@@ -1,6 +1,6 @@
 # Mira Messenger — LAMBDADEV
 
-Official Android Release distribution for **Mira Messenger 0.8.0**.
+Official Android Release distribution for **Mira Messenger 0.9.0**.
 Permanent package: **chat.mira.messenger**. Android 8.0+, arm64-v8a/x86_64.
 Application sources remain in the owner's private repository.
 
@@ -9,14 +9,22 @@ Application sources remain in the owner's private repository.
 - [Checksums](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/SHA256SUMS.txt)
 - [Previous releases](https://github.com/MerryGrim/MiraMessenger-releases/releases)
 
-Release includes Matrix/E2EE messaging, voice/video calls, Firebase or the own-server
+Release includes camera/gallery photos and videos, files, voice messages,
+one-point location, native Matrix polls, formatted text, replies, edits, reactions,
+and backward history pagination. The compact composer grows only for multiline
+text. Circular avatars appear across the app; profile photos can be selected,
+cropped in a round pan/zoom editor, uploaded or removed. Profile avatars are public
+Matrix media; message attachments use native SDK encryption in E2EE rooms.
+
+Release also retains Matrix/E2EE messaging, voice/video calls, Firebase or the own-server
 push transport, message checkmarks and GitHub background update checks/downloads.
 One check means server acceptance; two require another participant's public read
 receipt (at least one participant in a group). Matrix has no standard phone-delivery
 acknowledgement. Notification deduplication applies within one installation;
 cross-device notification dismissal is not implemented.
 
-The new package installs separately from the archived .debug MVP. Keep old data
+Version 0.9.0 (code11) updates Release 0.8.0 in place with the same permanent key.
+The permanent package installs separately from the archived .debug MVP. Keep old data
 until the required encrypted history is accessible in the new app. Sign in and
 restore available Matrix keys; a login password alone cannot recover lost E2EE keys.
 Later Release versions replace this same package with the existing permanent key
