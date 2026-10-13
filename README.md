@@ -1,46 +1,32 @@
-# Mira Messenger — LAMBDADEV
+# Mira Messenger · LAMBDADEV
 
-Official Android Release distribution for **Mira Messenger 0.10.0**.
-Permanent package: **chat.mira.messenger**. Android 8.0+, arm64-v8a/x86_64.
-Application sources remain in the owner's private repository.
+Постоянная Android-версия: `chat.mira.messenger`, без `.debug`.
+Исходники приватные, APK и манифест обновлений публикуются здесь.
 
-- [Download Release APK](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/MiraMessenger-release.apk)
-- [Release update manifest](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/update-manifest-release.json)
-- [Checksums](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/SHA256SUMS.txt)
-- [Previous releases](https://github.com/MerryGrim/MiraMessenger-releases/releases)
+[Скачать Release APK](https://github.com/MerryGrim/MiraMessenger-releases/releases/latest/download/MiraMessenger-release.apk)
 
-Release includes camera/gallery photos and videos, files, voice messages,
-one-point location, native Matrix polls, formatted text, replies, edits, reactions,
-and backward history pagination. The compact composer grows only for multiline
-text. Circular avatars appear across the app; profile photos can be selected,
-cropped in a round pan/zoom editor, uploaded or removed. Profile avatars are public
-Matrix media; message attachments use native SDK encryption in E2EE rooms.
+Mira0.11.0 добавляет ответ свайпом, контекстное меню сообщений, правку и
+массовое удаление своих сообщений. Форматирование доступно иконками под
+компактным полем ввода, с сохранением выделения. Аватары личных чатов показаны
+в списке и заголовке, известное присутствие — точками; набор текста обновляется
+в активных чатах. Контакты объединяют знакомых и доступную часть каталога сервера.
 
-Release also retains Matrix/E2EE messaging, voice/video calls, Firebase or the own-server
-push transport, message checkmarks and GitHub background update checks/downloads.
-One check means server acceptance; two require another participant's public read
-receipt (at least one participant in a group). Matrix has no standard phone-delivery
-acknowledgement. Notification deduplication applies within one installation;
-cross-device notification dismissal is not implemented.
+Создание ключа восстановления, защищённая временная копия, сохранение в выбранный
+файл и импорт существующего ключа помогают восстановить доступную зашифрованную
+историю. Ключи, которых нет на устройстве или в копии, восстановить нельзя.
+Удаление не гарантирует уничтожения сохранённых копий и данных на чужих серверах.
 
-Version 0.10.0 (code12) updates Release 0.9.0 in place with the same permanent key.
-The permanent package installs separately from the archived .debug MVP. Keep old data
-until the required encrypted history is accessible in the new app. Sign in and
-restore available Matrix keys; a login password alone cannot recover lost E2EE keys.
-Later Release versions replace this same package with the existing permanent key
-and a higher versionCode. APK size, SHA-256, package/version and certificate are
-checked before installation. Android requires the user's installation confirmation.
+Для своего присутствия доступны автоматический режим, онлайн, отошёл, занят и
+офлайн. На im.w2o.ru можно скрыть онлайн и точное время посещения; вместо них
+передаются приблизительные категории. Сообщения, прочтение и набор текста могут
+показывать активность. Личная комната «Избранное» открывается через верхнее меню.
 
-Firebase requires reachable Google services; the own-server option works without
-Google and uses an Android foreground listener. Delivery can be delayed by device
-or network restrictions. Redaction cannot erase other devices' or servers' copies.
-
-Public signing-certificate SHA-256:
+Release0.11.0/code13 устанавливается поверх Release0.10.0 без удаления приложения.
+Постоянный сертификат SHA-256:
 `7e1a6e2805adb106e7e2f28e0dd956b9ce819f1e04a0964b27a3f46459ec5cf0`.
-This is the existing permanent certificate; no new private key was generated.
+Android8.0+, arm64 и x86_64. Старые MVP Releases сохранены отдельно.
 
-Bundled Element Call has its own license. See [LICENSE-NOTICE.md](LICENSE-NOTICE.md)
-and [SOURCE.md](SOURCE.md) for its official license and exact upstream source.
-Keeping Mira's Git repository private does not grant a commercial Element license.
-
-В 0.10.0: обычные и секретные DM, сведения о комнате и профиле, Matrix SAS, правила уведомлений, отдельные страницы настроек. Одна основная кнопка завершения звонка, звук в меню, исправленная очистка сессии. Ключи требуются для E2EE-истории; проверка эмуляторов не устанавливает причину выключения физического телефона.
+Matrix/E2EE, голосовые и видеозвонки, Firebase, собственный канал уведомлений и
+обновление через GitHub сохранены. Android потребует подтвердить установку.
+Проверки на эмуляторах не подтверждают плавность и фоновую доставку на каждом
+физическом телефоне; причина ранее сообщённого выключения телефона не установлена.
