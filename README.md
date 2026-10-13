@@ -1,6 +1,6 @@
 # Mira Messenger — LAMBDADEV
 
-Official Android Release distribution for **Mira Messenger 0.9.0**.
+Official Android Release distribution for **Mira Messenger 0.10.0**.
 Permanent package: **chat.mira.messenger**. Android 8.0+, arm64-v8a/x86_64.
 Application sources remain in the owner's private repository.
 
@@ -23,7 +23,7 @@ receipt (at least one participant in a group). Matrix has no standard phone-deli
 acknowledgement. Notification deduplication applies within one installation;
 cross-device notification dismissal is not implemented.
 
-Version 0.9.0 (code11) updates Release 0.8.0 in place with the same permanent key.
+Version 0.10.0 (code12) updates Release 0.9.0 in place with the same permanent key.
 The permanent package installs separately from the archived .debug MVP. Keep old data
 until the required encrypted history is accessible in the new app. Sign in and
 restore available Matrix keys; a login password alone cannot recover lost E2EE keys.
@@ -42,3 +42,5 @@ This is the existing permanent certificate; no new private key was generated.
 Bundled Element Call has its own license. See [LICENSE-NOTICE.md](LICENSE-NOTICE.md)
 and [SOURCE.md](SOURCE.md) for its official license and exact upstream source.
 Keeping Mira's Git repository private does not grant a commercial Element license.
+
+В 0.10.0: обычные и секретные DM, сведения о комнате и профиле, Matrix SAS, правила уведомлений, отдельные страницы настроек. Одна основная кнопка завершения звонка, звук в меню, исправленная очистка сессии. Ключи требуются для E2EE-истории; проверка эмуляторов не устанавливает причину выключения физического телефона.
